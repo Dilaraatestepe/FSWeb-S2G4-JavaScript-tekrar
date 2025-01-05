@@ -101,27 +101,55 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+let enkucuk = sayilar[0]; // İlk değeri alıyoruz
+let enbuyuk = sayilar[0]; // İlk değeri alıyoruz
+
+for (let i = 1; i < sayilar.length; i++) {
+  if (sayilar[i] < enkucuk) enkucuk = sayilar[i];
+  if (sayilar[i] > enbuyuk) enbuyuk = sayilar[i];
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+let ucetambolunenler = [];
+
+sayilar.forEach((sayi) => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi); // 3'e bölünen sayıyı ekliyoruz
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+let ucebolunenlerintoplami = ucetambolunenler.reduce(
+  (toplam, sayi) => toplam + sayi,
+  0
+);
 
 // 3d çözümü
 
-/* kodlar buraya */
+let besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+let siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+let tekraredensayilar = [];
+let sayiSayac = {};
+
+sayilar.forEach((sayi) => {
+  sayiSayac[sayi] = (sayiSayac[sayi] || 0) + 1; // Her sayının tekrarını sayıyoruz
+});
+
+for (let sayi in sayiSayac) {
+  if (sayiSayac[sayi] > 1) {
+    tekraredensayilar.push(
+      `${sayi} sayısı ${sayiSayac[sayi]} kere tekrar edilmiştir`
+    );
+  }
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
